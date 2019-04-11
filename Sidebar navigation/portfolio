@@ -1,0 +1,177 @@
+var Emp_det =  [{
+        name:"Selva",
+        age:"25",
+        blood:"O+ve",
+        Qulification:"UG",
+        Exp:"2 years Experiance",
+        skillset:["html5","css3","Javascript","Jquery","Java"],
+        company:"Transfour"
+    },
+    {
+      name:"Rajesh",
+      age:"33",
+      blood:"AB-ve",
+      Qulification:"PG",
+      Exp:"4 Years Experiance",
+      skillset:["Angular","ReactJs"],
+      company:"Transfour"
+  },
+  {
+    name:"Ramki",
+    age:"25",
+    blood:"O-ve",
+    Qulification:"PG",
+    Exp:"2 Years Experiance",
+    skillset:["Python","Ajax","PHP"],
+    company:"TransFour"
+  },
+    {
+        name:"Neeravi",
+        age:"30",
+        blood:"O+ve",
+        Qulification:"PG",
+        Exp:"4 Years Experiance",
+        skillset:["Angular","VueJs","Javascript","Jquery","Java",],
+        company:"Infinity Research"
+    },
+    {
+        name:"Ganesh",
+        age:"28",
+        blood:"B+ve",
+        Qulification:"PG",
+        Exp:"3 Years Experiance",
+        skillset:["html5","Javascript","Jquery","Bootstrap","php"],
+        company:"Infinity Research"
+    },
+    {
+        name:"Hussain",
+        age:"26",
+        blood:"AB+ve",
+        Qulification:"UG",
+        Exp:"3 Years Experiance",
+        skillset:["html5","Javascript","Jquery","Python","PHP"],
+        company:"Infinity Research"
+    },
+    {
+      name:"Kumar",
+      age:"29",
+      blood:"B+ve",
+      Qulification:"UG",
+      Exp:"2.6 Years Experiance",
+      skillset:["Java","html5","css3"],
+      company:"Infinity Research"
+    },
+    {
+      name:"Sam",
+      age:"32",
+      blood:"B+ve",
+      Qulification:"UG",
+      Exp:"1.5 Years Experiance",
+      skillset:["Python","html5","css3"],
+      company:"TechMahidra"
+  },
+  {
+    name:"Saravanan",
+    age:"29",
+    blood:"O-ve",
+    Qulification:"UG",
+    Exp:"5 Years Experiance",
+    skillset:["html5","css3","Javascript","Jquery","Angular"],
+    company:"Tech Mahidra"
+},
+{
+  name:"Sekar",
+  age:"30",
+  blood:"A-ve",
+  Qulification:"UG",
+  Exp:"2 Years Experiance",
+  skillset:["Python","Ajax","html5","css3","VueJs"],
+  company:"TechMahidra"
+},
+{
+  name:"Ram",
+  age:"27",
+  blood:"O+ve",
+  Qulification:"PG",
+  Exp:"3 Years Experiance",
+  skillset:["ReactJs","Ajax","PHP","html5","css3","Bootstrap"],
+  company:"Sobha"
+},
+{
+  name:"Hassan",
+  age:"28",
+  blood:"O+ve",
+  Qulification:"PG",
+  Exp:"3 Years Experiance",
+  skillset:["VueJs","Ajax","html5","css3 "],
+  company:"Sobha"
+},
+{
+  name:"Mohan",
+  age:"29",
+  blood:"AB+ve",
+  Qulification:"UG",
+  Exp:"3.6 Years Experiance",
+  skillset:["Python","Ajax","PHP","html5","css3"],
+  company:"Sobha"
+},
+{
+  name:"Bala",
+  age:"24",
+  blood:"O+ve",
+  Qulification:"UG",
+  Exp:"1 Years Experiance",
+  skillset:["Python","Ajax","PHP"],
+  company:"Sobha"
+},
+]
+
+function outputUpdate(num) {
+    document.querySelector('#output').value = num;
+    }
+    $(document).ready(function(){
+      var arr_Check =["HTML5", "CSS", "Javascript", "Jquery", "Java", "Angular", "VueJs", "Bootstrap", "php", "Python", "Ajax","ReactJs"];
+      for(var i=0; i<arr_Check.length; i++){
+        var j=i+1;
+      $('#skl_check').append('<input type="checkbox" class="skillCheck" name="skill_'+[j]+'"  value="HTML5">'+
+      '<span class="_skl">'+arr_Check[i]+'</span><br>')
+      }
+      function loadFun( ){
+        $(document).on('change','.skillCheck',function(event){
+          console.log($(event.target.value));
+          
+        for(j=0; j<Emp_det.length; j++){
+            // console.log(Emp_det[j].name);
+            var mm =Emp_det[j].skillset;
+            var arr=""; 
+          for(var k=0; k<mm.length; k++){
+            arr+=" "+mm[k];
+            // console.log(mm[k]);
+          } 
+        
+    $('#main_container').append('<div class="box">'+
+    '<div class="box-text">'+
+            '<h3> '+Emp_det[j].name+'<span id="age">'+  Emp_det[j].age+'</span>'+
+            '</h3>'+
+            '<section class="st1">'+
+            '<span id="s1" >Blood Group</span>'+
+            '<span>Qualification</span>'+
+        '</section>'+
+        '<section class="st2">'+
+            '<span id="s2">'+Emp_det[j].blood +'</span>'+
+            '<span id = "s3">'+Emp_det[j].Qulification +'</span>'+
+        '</section>'+
+            '<p class="blue">'+arr +'</p>'+
+            '<p><span class="company" >'+Emp_det[j].company+'</span>'+
+            '</p>'+
+            '<p id="border"></p>'+
+            '<p>'+Emp_det[j].Exp +'</p>'+
+            
+        '</div>'+
+        '</div>'+
+        '</div>');
+    }
+});
+}
+});
+
